@@ -68,7 +68,7 @@ Holidaze is a full-featured holiday venue booking application. Customers can bro
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/holidaze.git
+git clone https://github.com/edrivvoll/project-exam-2.git
 cd holidaze
 
 # Install dependencies
