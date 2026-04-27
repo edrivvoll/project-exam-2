@@ -1,0 +1,280 @@
+:root {
+  --hz-primary: #1a6b5c;
+  --hz-primary-dark: #134f44;
+  --hz-secondary: #f4a83a;
+  --hz-bg: #f8f9fa;
+  --hz-card-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+::placeholder {
+  color: #b0b8c1 !important;
+  opacity: 1;
+}
+
+body {
+  background-color: var(--hz-bg);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar-holidaze {
+  background: linear-gradient(135deg, var(--hz-primary) 0%, var(--hz-primary-dark) 100%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.navbar-holidaze .navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #fff !important;
+}
+
+.navbar-holidaze .nav-link {
+  color: rgba(255,255,255,0.9) !important;
+  font-weight: 500;
+}
+
+.navbar-holidaze .nav-link:hover,
+.navbar-holidaze .nav-link.active {
+  color: #fff !important;
+}
+
+/* Hero */
+.hero-section {
+  background: linear-gradient(135deg, var(--hz-primary) 0%, var(--hz-primary-dark) 100%);
+  color: white;
+  padding: 100px 0 80px;
+}
+
+.hero-section h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.hero-section .lead {
+  font-size: 1.15rem;
+  opacity: 0.9;
+}
+
+/* Search bar */
+.search-bar {
+  background: white;
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.search-bar .form-control {
+  border: none;
+  font-size: 1rem;
+  padding: 10px 16px;
+}
+
+.search-bar .form-control:focus {
+  box-shadow: none;
+}
+
+.search-bar .btn {
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-weight: 600;
+}
+
+/* Venue cards */
+.venue-card {
+  border: none;
+  border-radius: 16px;
+  box-shadow: var(--hz-card-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  height: 100%;
+}
+
+.venue-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+}
+
+.venue-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.venue-card .venue-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--hz-primary);
+}
+
+.venue-card .venue-rating {
+  color: var(--hz-secondary);
+  font-weight: 600;
+}
+
+.venue-card .venue-amenity {
+  font-size: 0.78rem;
+  background: #e8f5f2;
+  color: var(--hz-primary);
+  border-radius: 20px;
+  padding: 2px 10px;
+  display: inline-block;
+  margin: 2px;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--hz-primary) !important;
+  border-color: var(--hz-primary) !important;
+  font-weight: 600;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--hz-primary-dark) !important;
+  border-color: var(--hz-primary-dark) !important;
+}
+
+.btn-outline-primary {
+  color: var(--hz-primary) !important;
+  border-color: var(--hz-primary) !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--hz-primary) !important;
+  color: #fff !important;
+}
+
+/* Auth forms */
+.auth-card {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+  padding: 2rem;
+}
+
+/* Venue detail */
+.venue-detail-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* Calendar overrides */
+.react-datepicker {
+  border: 1px solid #dee2e6 !important;
+  border-radius: 12px !important;
+  font-family: inherit !important;
+  width: 100% !important;
+}
+
+.react-datepicker__month-container {
+  width: 100% !important;
+}
+
+.react-datepicker__day--highlighted {
+  background-color: #fee2e2 !important;
+  color: #dc2626 !important;
+}
+
+.react-datepicker__day--in-range,
+.react-datepicker__day--in-selecting-range {
+  background-color: #bbf7d0 !important;
+  color: #15803d !important;
+}
+
+.react-datepicker__day--range-start,
+.react-datepicker__day--range-end,
+.react-datepicker__day--selected {
+  background-color: var(--hz-primary) !important;
+  color: white !important;
+}
+
+/* Dashboard */
+.stat-card {
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--hz-primary), var(--hz-primary-dark));
+  color: white;
+  padding: 1.5rem;
+}
+
+.stat-card.secondary {
+  background: linear-gradient(135deg, var(--hz-secondary), #e08c20);
+}
+
+/* Footer */
+.footer {
+  background: #1a1a2e;
+  color: rgba(255,255,255,0.7);
+  padding: 2rem 0;
+  margin-top: auto;
+}
+
+.footer a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: white;
+}
+
+/* Loading spinner overlay */
+.loading-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+/* Booking card */
+.booking-card {
+  border: none;
+  border-radius: 16px;
+  box-shadow: var(--hz-card-shadow);
+  overflow: hidden;
+}
+
+.booking-card .booking-status {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Avatar */
+.avatar-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--hz-primary);
+}
+
+/* Amenities icons */
+.amenity-icon {
+  font-size: 1.1rem;
+  margin-right: 4px;
+}
+
+/* Page transitions */
+.page-wrapper {
+  min-height: calc(100vh - 130px);
+  padding: 2rem 0;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6c757d;
+}
+
+.empty-state svg {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.4;
+}
