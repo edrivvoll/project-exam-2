@@ -13,6 +13,7 @@ A modern accommodation booking frontend built with React and Bootstrap, consumin
 - [Environment & API](#environment--api)
 - [Pages & Routes](#pages--routes)
 - [User Roles](#user-roles)
+- [For Testers](#for-testers)
 
 ---
 
@@ -133,6 +134,55 @@ Register with `venueManager: false` (default). Can browse venues, make bookings 
 Register with `venueManager: true`. Can create, edit and delete venues, and view all bookings on those venues. Cannot make bookings as a guest.
 
 > **Note:** Registration requires a `stud.noroff.no` email address as mandated by the Noroff API.
+
+---
+
+## For Testers
+
+### Quick setup checklist
+
+1. Clone the repo and run `npm install && npm run dev` — no `.env` file is needed.
+2. The API key is already hardcoded in `src/api/client.js` so the app works out of the box.
+3. **Registration requires a `stud.noroff.no` email address.** The API rejects all other domains at the registration endpoint, so testers must use such an address or use the pre-made test accounts below.
+
+### Test accounts
+
+> These accounts exist in the Noroff API sandbox. Passwords are case-sensitive.
+
+| Role | Email | Password |
+|---|---|---|
+| Customer | `testcustomer@stud.noroff.no` | `Test1234!` |
+| Venue Manager | `testmanager@stud.noroff.no` | `Test1234!` |
+
+If those accounts no longer exist, register a new one with a `stud.noroff.no` email at `/register` and select the appropriate role.
+
+### Testing the customer flow
+
+1. Log in as a customer.
+2. Browse venues on the home page — search and pagination both work.
+3. Open a venue and use the calendar to pick dates (booked dates are blocked out).
+4. Submit a booking and verify it appears on `/my-bookings`.
+5. Cancel a booking from `/my-bookings`.
+6. Update avatar/bio on `/profile`.
+
+### Testing the venue manager flow
+
+1. Log in as a venue manager.
+2. Go to `/manager` — your venue dashboard.
+3. Create a new venue via the **Create Venue** button (fill in name, description, price, max guests; images and location are optional).
+4. Edit or delete the venue from the dashboard.
+5. Click **View Bookings** on a venue to see all customer bookings for it.
+
+### Known limitations
+
+- A venue manager account **cannot** make bookings as a guest — this is intentional per the API spec.
+- Image URLs must be publicly accessible — local file uploads are not supported.
+- The availability calendar blocks already-booked date ranges but does **not** prevent selecting a partial overlap at the API level (the API itself validates and returns an error in that case).
+- There is no email-verification step; the `stud.noroff.no` domain check is the only gate.
+
+### Auth & storage
+
+Authentication tokens are stored in `localStorage` under the keys `hz_token` (JWT) and `hz_user` (serialised user object). Clearing localStorage or opening a private window gives you a clean logged-out state.
 
 ---
 
