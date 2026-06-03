@@ -1,6 +1,6 @@
 # Holidaze
 
-
+![Holidaze](https://github.com/user-attachments/assets/0f5e837e-adf6-4aed-8182-4e308e98399f)
 
 A modern accommodation booking frontend where customers can browse and book holiday venues, and venue managers can list and manage their own properties.
 
